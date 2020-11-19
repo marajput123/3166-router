@@ -1,12 +1,23 @@
 /**
+Filename: Ip_Gui.java
 
+ Author: Manan Parekh
+         Ivy Pham
+         Wes Pham
+         Muhammad Rajput
+         Bonnie Ruan
+
+ Description: This File creates a GUI for the user to input their IPv4 addresses, so that the program
+ can show which packet got routed which interface.
+
+ @version: Fall 2020
 **/
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.*;
-import java.util.*;
+
 
 
 public class Ip_Gui implements ActionListener {

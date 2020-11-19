@@ -1,4 +1,19 @@
-import java.util.Scanner;
+/**
+ Filename: IpAddress.java
+
+ Author: Manan Parekh
+         Ivy Pham
+         Wes Pham
+         Muhammad Rajput
+         Bonnie Ruan
+
+ Description: This File will do the following:
+ Takes the 32-bit IP address input from user's input in Ip_Gui.java.
+ Takes that IP address and convert into binary and compares the network part of the address
+ with each addresses from the routing table.
+
+ @version: Fall 2020
+**/
 
 public class IpAddress {
     public String ipAddress;
@@ -7,7 +22,6 @@ public class IpAddress {
     public String newAddress;
 
     public IpAddress(String Ip){
-//        Scanner scanner = new Scanner(System.in);
         System.out.print("IP Address is: ");
         this.ipAddress = Ip;
     }
