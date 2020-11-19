@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 public class IpAddress {
-    private String ipAddress;
-    private int[] ipAddressParsed = new int[4];
-    private StringBuilder binaryString = new StringBuilder();
-    private String newAddress;
+    public String ipAddress;
+    public int[] ipAddressParsed = new int[4];
+    public StringBuilder binaryString = new StringBuilder();
+    public String newAddress;
 
-    public IpAddress(){
-        Scanner scanner = new Scanner(System.in);
+    public IpAddress(String Ip){
+//        Scanner scanner = new Scanner(System.in);
         System.out.print("IP Address is: ");
-        this.ipAddress = scanner.next();
+        this.ipAddress = Ip;
     }
 
     public boolean validate(){
@@ -34,6 +34,10 @@ public class IpAddress {
 
     public void convertToBinary(){
         for(int i = 0; i < this.ipAddressParsed.length; i++){
+            if (this.ipAddressParsed[i] == 0) {
+                this.binaryString = this.binaryString.append("000000000");
+                continue;
+            }
             String binaryNum = convertToBinary(this.ipAddressParsed[i]);
             this.binaryString = this.binaryString.append(binaryNum);
         }
@@ -86,9 +90,9 @@ public class IpAddress {
         Boolean matching;
         for (int i = 0; i < addressTable.length; i++) {
             if (this.newAddress.equals(addressTable[i]))
-                return nextHop[i];
+                return addressTable[i] + "-" + nextHop[i];
         }
-        return defaultRouter;
+        return "Default-" + defaultRouter;
     }
 
     public void printAllRoutes(){
